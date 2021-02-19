@@ -31,8 +31,8 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
-    - name: Show email address
-      run: echo "We got your email address from input which is ${{ github.event.inputs.email }}"
+    - name: Checkout
+    - uses: actions/checkout@v2
     - name: Run a multi-line script
       run: |
           touch file.txt
