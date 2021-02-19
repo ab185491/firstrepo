@@ -39,6 +39,6 @@ jobs:
           cat file
           git status
           git add . 
-          git commit -m "add script from script'
+          git commit -m "add script from script"
           git push
           python3 test.py
