@@ -1,4 +1,4 @@
-name: Run Commands
+name: Upload new files
 
 on:
   push
