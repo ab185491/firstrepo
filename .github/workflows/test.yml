@@ -15,8 +15,8 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          git config user.name "ap185428"
-          git config user.email "ap185428@ncr.com"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           pwd
           git status
           touch hello.txt
@@ -26,18 +26,3 @@ jobs:
           git commit -m "new file created"
           git status         
           python3 test.py
-      - uses: actions/upload-artifact@main
-        with:
-          name: webpack artifacts
-          path: public/  
-  job2:
-    needs: job1
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/download-artifact@main
-      with: 
-        name: webpack artifacts
-        path: public
-    - run: |
-        git status
