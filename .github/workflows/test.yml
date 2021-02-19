@@ -30,7 +30,6 @@ jobs:
           touch "${GITHUB_SHA}.txt"
           echo "Name:- ${{ github.event.inputs.name }}" > ${GITHUB_SHA}.txt
           echo "Email:- ${{github.event.inputs.email}}" >> "${GITHUB_SHA}.txt"
-          git checkout main
           git add .
           git commit -m "new file created"
           git push
