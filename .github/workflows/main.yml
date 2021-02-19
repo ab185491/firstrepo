@@ -36,4 +36,9 @@ jobs:
           touch file_from_script.txt
           echo "Adding first line" > file
           echo "Adding second line" >> file
+          cat file
+          git status
+          git add . 
+          git commit -m "add script from script'
+          git push
           python3 test.py
