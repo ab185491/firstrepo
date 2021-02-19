@@ -25,5 +25,6 @@ jobs:
           git add .
           git status
           git commit -m "new file created"
+          git push
           git status         
           python3 test.py
