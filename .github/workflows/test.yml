@@ -8,11 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Run a one-line script
-        run: echo Hello, world!
-        id: Run_script
-
       - name: Run a multi-line script
         run: |
           git config user.name "github-actions"
@@ -20,11 +15,8 @@ jobs:
           pwd
           git status
           touch hello.txt
+          touch {GITHUB_SHA}.txt
           git checkout main
-          git status
           git add .
-          git status
           git commit -m "new file created"
           git push
-          git status         
-          python3 test.py
