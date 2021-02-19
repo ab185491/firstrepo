@@ -1,7 +1,18 @@
 name: Upload new files
 
 on:
-  push
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        default: 'World'
+        required: true
+      email: 
+        description: "Person's email address"
+        required: true
+
   
 jobs:
   job1:
@@ -16,6 +27,8 @@ jobs:
           git status
           cd public
           touch "${GITHUB_SHA}.txt"
+          echo "Name:- ${{ github.event.inputs.name }}" > ${GITHUB_SHA}.txt
+          echo "Email:- ${{github.event.inputs.email}}" >> "${GITHUB_SHA}.txt"
           git checkout main
           git add .
           git commit -m "new file created"
