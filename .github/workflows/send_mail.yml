@@ -34,7 +34,7 @@ jobs:
           body: Build job of ${{github.repository}} completed successfully!
           # Read file contents as body:
           to: ashish.bhusalin.16999@gmail.com
-          from: Ashish Bhusal # <user@example.com>
+          from: padevmails@gmail.com # <user@example.com>
           # Optional content type (defaults to text/plain):
           content_type: text/html
           # Optional converting Markdown to HTML (set content_type to text/html too):
