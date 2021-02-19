@@ -33,4 +33,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          touch file_from_script.txt
+          echo "Adding first line" > file
+          echo "Adding second line" >> file
           python3 test.py
