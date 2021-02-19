@@ -36,8 +36,8 @@ jobs:
     - name: Run a multi-line script
       run: |
           touch file.txt
-          echo "Adding first line" > file
-          echo "Adding second line" >> file
+          echo "Name:- ${{ github.event.inputs.name }}" > file
+          echo "Email:- github.event.inputs.email" >> file
           git status
           git config user.name github-actions
           git config user.email github-actions@github.com
