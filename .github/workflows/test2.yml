@@ -16,7 +16,7 @@ jobs:
           git status
           touch hello.txt
           touch "${GITHUB_SHA}.txt"
-          git checkout main
+          git checkout patch-2-checkout
           git add .
           git commit -m "new file created"
           git push
