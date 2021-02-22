@@ -27,6 +27,7 @@ jobs:
           git config user.email "github-actions@github.com"
           pwd
           git status
+          git checkout $GITHUB_REF
           cd public
           touch "${GITHUB_SHA}.txt"
           echo "Name:- ${{ github.event.inputs.name }}" > ${GITHUB_SHA}.txt
