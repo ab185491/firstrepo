@@ -1,0 +1,22 @@
+name: Testing using branches for checkout action
+
+on:
+  push
+  
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a multi-line script
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          pwd
+          git status
+          touch hello.txt
+          touch "${GITHUB_SHA}.txt"
+          git checkout main
+          git add .
+          git commit -m "new file created"
+          git push
