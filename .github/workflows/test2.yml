@@ -18,8 +18,8 @@ jobs:
           git status
           cd public
           touch "${GITHUB_SHA}.txt"
-          echo "Name:- ${ GITHUB_ACTOR } > ${GITHUB_SHA}.txt
-          echo "Email:- ${ GITHUB_ACTOR} >> "${GITHUB_SHA}.txt"
+          echo "Name:- $GITHUB_ACTOR  > ${GITHUB_SHA}.txt
+          echo "Email:- $GITHUB_ACTOR >> "${GITHUB_SHA}.txt"
           git checkout main
           git add .
           git commit -m "new file created"
