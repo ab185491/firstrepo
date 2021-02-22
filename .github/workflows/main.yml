@@ -50,5 +50,7 @@ jobs:
           git config user.email github-actions@github.com
           git add . 
           git commit -m "add script from script"
+          git status
+          echo "hello"
           git push
           python3 test.py
