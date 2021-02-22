@@ -23,7 +23,7 @@ jobs:
         run: |
           echo "PATCH-3 BRANCH"
           echo "$GITHUB_REF"
-          git branch
+          git branch --list
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           pwd
