@@ -22,7 +22,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo "PATCH-2 BRANCH"
-          echo "${github.ref}"
+          echo "$GITHUB_CONTEXT"
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           pwd
