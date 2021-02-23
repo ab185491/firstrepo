@@ -13,9 +13,8 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo ${env:GITHUB_REF}
-          echo ${env:GITHUB_ACTION}
           echo ${env:GITHUB_EVENT_NAME}
-          if(${env:GITHUB_ACTION} -eq "pull_request"){
+          if(${env:GITHUB_EVENT_NAME} -eq "pull_request"){
             write-host("This is if statement")
             echo ${env:GITHUB_HEAD_REF}
             git pull
