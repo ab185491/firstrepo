@@ -13,6 +13,12 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo ${env:GITHUB_REF}
+          echo ${env:GITHUB_ACTION}
+          if(${env:GITHUB_ACTION} -eq "pull_request"){
+            write-host("This is if statement")
+            git checkout main
+          }
+          
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git status
