@@ -13,13 +13,14 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo "PATCH-3 BRANCH"
-          echo "$GITHUB_REF"
+          echo ${env:GITHUB_REF}
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           pwd
           git status
           cd public
-          ni "${GITHUB_SHA}.txt"
+          ni "${env:GITHUB_SHA}.txt"
+          ls
           echo "Name:- $GITHUB_ACTOR" > ${GITHUB_SHA}.txt
           echo "Email:- ${{github.event.inputs.email}}" >> "${GITHUB_SHA}.txt"
           git add .
