@@ -16,12 +16,11 @@ jobs:
           echo ${env:GITHUB_ACTION}
           if(${env:GITHUB_ACTION} -eq "pull_request"){
             write-host("This is if statement")
+            echo ${env:GITHUB_HEAD_REF}
             git pull
             git checkout main
           }else {
               write-host("This is else statement")
-              git pull
-              git checkout main
           }    
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
