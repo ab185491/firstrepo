@@ -17,6 +17,7 @@ jobs:
           if(${env:GITHUB_EVENT_NAME} -eq "pull_request"){
             write-host("This is if statement")
             echo ${env:GITHUB_HEAD_REF}
+            echo ${env:GITHUB_BASE_REF}
             git pull
             git checkout main
           }else {
