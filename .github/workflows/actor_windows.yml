@@ -1,4 +1,4 @@
-name: Upload new files
+name: Github Actor Windows
 
 on:
   push:
@@ -23,6 +23,7 @@ jobs:
           ni "${env:GITHUB_SHA}_actor.txt"
           ls
           echo "Name:- $GITHUB_ACTOR" > ${GITHUB_SHA}_actor.txt
+          git pull
           git add .
           git commit -m "new file created"
           git push
