@@ -20,7 +20,7 @@ jobs:
           git status
           cd public
           ni "${GITHUB_SHA}.txt"
-          echo "Name:- ${{ GITHUB_ACTOR }}" > ${GITHUB_SHA}.txt
+          echo "Name:- $GITHUB_ACTOR" > ${GITHUB_SHA}.txt
           echo "Email:- ${{github.event.inputs.email}}" >> "${GITHUB_SHA}.txt"
           git add .
           git commit -m "new file created"
